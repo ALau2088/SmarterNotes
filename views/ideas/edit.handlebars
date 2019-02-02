@@ -1,0 +1,47 @@
+{{#each errors}}
+<div class="alert alert-danger">{{text}}</div>
+{{else}}
+
+{{/each}}
+
+<div class="card card-body">
+  <h3>Edit Note</h3>
+  <form action="/ideas/{{idea.id}}?_method=PUT" method="post">
+    <input type="hidden" name="_method" value="PUT">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" name="title" value="{{idea.title}}" required>
+    </div>
+    <div class="form-group">
+      <label for="details">Details</label>
+      <textarea class="form-control" name="details">{{idea.details}}</textarea>
+    </div>
+    <div class="sketch">
+      <div id="toolbar">
+        <div class="slideContainer">
+          Radius <span id="radval">20</span>
+          <input type="range" min="5" max="100" value="20" step="5" class="slider" id="myRange">
+        </div>
+        <div id="colors">
+          <!--
+          <div class="swatch active" style="background-color: red"></div>
+          <div class="swatch" style="background-color: green"></div>
+          <div class="swatch" style="background-color: blue"></div>
+          -->
+        </div>
+      </div>
+      <canvas id="canvas">
+        If you can read this, canvas not supported.
+      </canvas>
+      <!-- Hidden input for canvas data -->
+      <input type="text" name="data" id="imgData" style="display: none" value={{idea.data}}>
+    </div>
+    <button type="submit" class="btn btn-primary" id="save">Submit</button>
+  </form>
+  <script>
+    // Load saved image
+    img = new Image();
+    img.src = document.getElementById('imgData').value;
+    img.onload = function () { ctx.drawImage(img, 0, 0, canvas.width, canvas.height) };
+  </script>
+</div>

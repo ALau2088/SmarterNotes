@@ -1,0 +1,52 @@
+<div class="card card-body">
+  <h3>New Note</h3>
+  <form action="/ideas" method="post">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" name="title" required>
+    </div>
+    <div class="form-group">
+      <label for="details">Details</label>
+      <textarea class="form-control" name="details"></textarea>
+    </div>
+    <div class="sketch">
+      <div id="toolbar">
+        <!--
+        <div id="rad">
+          Radius <span id="radval">10</span>
+          <div id="decrad" class="radcontrol">-</div>
+          <div id="incrad" class="radcontrol">+</div>
+        </div>
+        -->
+        <div class="slideContainer">
+          Radius <span id="radval">20</span>
+          <input type="range" min="5" max="100" value="20" step="5"class="slider" id="myRange">
+
+        </div>
+        <div id="colors">
+          <!--
+          <div class="swatch active" style="background-color: red"></div>
+          <div class="swatch" style="background-color: green"></div>
+          <div class="swatch" style="background-color: blue"></div>
+          -->
+        </div>
+        <!--
+        <div id="previous">
+          <iframe id="downloadframe" hidden=yes></iframe>
+          Previous
+        </div>
+        <div id="save">
+          <iframe id="downloadframe" hidden=yes></iframe>
+          Save
+        </div>
+        -->
+      </div>
+      <canvas id="canvas">
+        If you can read this, canvas not supported.
+      </canvas>
+      <!-- Hidden input for canvas data -->
+      <input type="text" name="data" id="imgData" style="display: none">
+    </div>
+  <button type="submit" class="btn btn-primary" id="save">Submit</button>
+  </form>
+</div>

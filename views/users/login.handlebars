@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="col-md-6 mx-auto">
+    <div class="card card-body">
+      <h3 class="text-center">Account Login</h3>
+      <form method="post" action="/users/login">
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" class="form-control" name="password" required>
+        </div>
+        <button class="btn btn-primary">Submit</button>
+        <div class="card" style="width: 175px; margin-top:15px">
+          <div class="card-reader" style="background-color: rgba(0,0,0,.03);
+    border-bottom: 1px solid rgba(0,0,0,.125);">
+          Demo Login Info</div>
+          <ul class="list-group list-group-flash" style="list-style-type: none">
+          <li>Email: test@test.com</li>
+          <li>Password: 123456</li>
+          </ul>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
